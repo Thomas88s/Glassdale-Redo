@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;900&display=swap');
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  color: white;
+  background-color: #313153;
+  padding: .5em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+main {
+  background-color: #f1f1f1;
+}
+
+.criminalsList, .officersList, witnessesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+
+.criminal, .officer, .note, .witness, .donut {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  flex-basis: 25%;
+  background-color: rgb(239, 236, 244);
+}
+
+.criminal {
+  border: 1px dashed rgb(5, 1, 1);
+  
+}
+
+.officer {
+  border: 1px dotted blue;
+}
+
+.witness {
+  border: 1px dotted green;
+}
+
+.donut {
+  border: 1px dotted yellow;
+}
+
+.notesAside {
+  display: flex;
+  flex-direction: column;
+}
+
+.caseDataContainer, .donutContainer {
+  display: flex;
+  padding: 1em;
+}
+
+.notesAside {
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
+}
+
+.note {
+  border: 1px dotted orchid;
+}
+
+.filters, .display-buttons {
+  display: flex;
+  align-items: center;
+  background-color: rgb(175, 184, 216);
+  padding: .5em;
+}
+
+.filter, .button {
+  padding: 0 .5em 0 .5em;
+}
+
+fieldset {
+  border: none;
+  padding-left: 0;
+}
