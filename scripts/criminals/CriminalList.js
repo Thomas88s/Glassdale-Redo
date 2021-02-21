@@ -2,6 +2,7 @@
  import { getCriminals, useCriminals } from './CriminalProvider.js'
  import { Criminal } from "./Criminal.js"
  import { useConvictions } from "../convictions/ConvictionProvider.js"
+import { useOfficers } from '../officers/OfficerProvider.js'
 
 
 
@@ -10,17 +11,14 @@ const criminalsContainer = document.querySelector(".criminalsContainer")
 
 const eventHub = document.querySelector(".container")
 
-const criminalsArray = useCriminals()
+
 
 // Listen for the custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeChosen", crimeThatWasChosenEvent => {
     // Use the property you added to the event detail.
     if (crimeThatWasChosenEvent.detail.crimeThatWasChosen !== "0"){
-
         const convictionsArray = useConvictions()
-
         const chosenConvictionObject = convictionsArray.find(convictionObj => {
-            
             return convictionObj.id === parseInt(crimeThatWasChosenEvent.detail.crimeThatWasChosen)
         })
 
@@ -33,9 +31,6 @@ eventHub.addEventListener("crimeChosen", crimeThatWasChosenEvent => {
     }
 })
 
-const render = criminalCollection => {
-    contentTarget.innerHTML = ""
-}
 
 
 // Creates a variable to render criminals 
@@ -62,3 +57,22 @@ const render = criminalCollection => {
          renderToDom(criminalArray)
      })
     }
+
+
+    eventHub.addEventListener("officerSelected", event => {
+        // How can you access the officer name that was selected by the user?
+        const officerName = event.detail.selectedOfficerName
+        
+            
+    
+        // How can you get the criminals that were arrested by that officer?
+        const criminalsArray = useCriminals()
+        const criminals = criminalsArray.filter(
+            criminalObject => {
+              if(criminalObject.arrestingOfficer === officerName) {
+                  return true
+              }
+              }
+        ) 
+        renderToDom(criminals)
+    }) 

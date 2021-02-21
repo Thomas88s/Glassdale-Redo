@@ -1,4 +1,4 @@
-import { useCriminals } from "../criminals/CriminalProvider"
+
 
 let officers = []
 
@@ -12,10 +12,8 @@ export const getOfficers = () => {
  //  Then convert the Json recieved into a JS data structure
         .then(response => response.json())
     //  Now plug the parsedOfficers into an officers variable 
-        .then(
-            parsedOfficers => {
-                console.table(parsedOfficers)
-                officers = parsedOfficers
-                
+        .then(parsedOfficers => {
+            console.table(parsedOfficers)
+            officers = parsedOfficers          
     })
 }
