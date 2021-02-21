@@ -4,7 +4,9 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  
 }
+
 
 nav {
   color: white;
@@ -16,7 +18,7 @@ nav {
 
 main {
   background-color: #f1f1f1;
-}
+}  
 
 .criminalsList, .officersList, witnessesList {
   display: flex;
@@ -30,12 +32,14 @@ main {
   padding: 0.5rem;
   flex-basis: 25%;
   background-color: rgb(239, 236, 244);
+  
 }
 
 .criminal {
-  border: 1px dashed rgb(5, 1, 1);
-  
-}
+  color:rgb(169, 169, 169);
+  border: 3px solid rgb(34, 10, 10);
+  background-image: url("https://image.shutterstock.com/image-illustration/jail-cell-interior-barred-window-260nw-1022883895.jpg");
+} 
 
 .officer {
   border: 1px dotted blue;
