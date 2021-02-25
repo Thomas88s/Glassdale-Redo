@@ -1,11 +1,10 @@
 {
   "notes": [
     {
-      "criminalId": 1,
       "author": "name",
       "date": 12,
+      "criminalId": 1,
       "text": "text"
-
     }
   ],
   "posts": [
