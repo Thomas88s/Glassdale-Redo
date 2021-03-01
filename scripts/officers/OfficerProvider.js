@@ -13,7 +13,7 @@ export const getOfficers = () => {
         .then(response => response.json())
     //  Now plug the parsedOfficers into an officers variable 
         .then(parsedOfficers => {
-            console.table(parsedOfficers)
+            // console.table(parsedOfficers)
             officers = parsedOfficers          
     })
 }
